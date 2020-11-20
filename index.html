@@ -9,7 +9,10 @@
     </head>
     <body>
         <div id="root" class="">
-
+            <!-- inserisco condizione per far comparire {{email}} solo quando inserisco un valore(quindi solo dopo che ho ricevuto una risposta) -->
+        <div v-if="email !== false" class="contact">
+            {{email}}
+        </div>
         </div>
         <script src="main.js" charset="utf-8"></script>
     </body>
