@@ -14,11 +14,6 @@ var app = new Vue ({
     mounted() {
         for (var i = 0; i < 10 ; i++) {
 
-            
-            if (i == 9 ){
-                this.check = true;
-            }
-
             let self = this;
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then(function(result) {
