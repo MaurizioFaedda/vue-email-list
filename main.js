@@ -2,7 +2,7 @@ var app = new Vue ({
     el: '#root',
 
     data: {
-        email: [],
+                email: [],
     },
 
     methods: {
@@ -16,6 +16,7 @@ var app = new Vue ({
                 .then(function(result) {
                     console.log(result);
                     self.email.push(result.data.response);
+
                 });
 
         }
