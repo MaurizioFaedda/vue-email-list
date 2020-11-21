@@ -3,22 +3,47 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
-        <div v-if="contacts.length == 10" id="root" class="container">
+
+        <div v-if="contacts.length > 5" id="root" class="container">
+            <div class="title">
+                <h1>Scegli e contatta il tuo consulente</h1>
+            </div>
             <!-- inserisco condizione per far comparire {{email}} solo quando inserisco un valore(quindi solo dopo che ho ricevuto una risposta) -->
             <div class="contacts_box">
                 <!-- ....................alls contacts................... -->
+                <div v-for='(contact, i) in contacts' class="contact_content">
+                    <div class="full-name">
+                        <h2>{{contact.name.response}}</h2>
+                    </div>
+                    <div class="contact_avatar_box">
+                        <img :src="'img/avatar_'+i+'.png'" alt="">
 
-                    <ul class="contacts">
+                    </div>
+                    <div class="address">
+                        <div class="mail">
+                            <span><i class="fas fa-at"></i></span>
+                        </div>
+                        <div class="phone">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                        </div>
+
+                    </div>
+                </div>
+                    <!-- <ul class="contacts">
                         <li
                             v-for="(contact, i) in contacts"
                             class="contact_row"
                         >
                             <div class="button_box">
+
                                 <button @click="isTrue_mail(i)" type="button" name="button">Mostra email</button>
                                 <button @click="isTrue_phone(i)" type="button" name="button">Mostra telefono</button>
                             </div>
@@ -33,7 +58,7 @@
                                 {{contact.phone.response}}
                             </div>
                         </li>
-                    </ul>
+                    </ul> -->
 
                 </div>
             </div>

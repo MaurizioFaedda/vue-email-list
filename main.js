@@ -36,7 +36,7 @@ var app = new Vue ({
     },
 
     mounted() {
-       for (var i = 0; i < 10 ; i++) {
+       for (var i = 0; i < 6 ; i++) {
 
             let self = this;
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
@@ -53,6 +53,7 @@ var app = new Vue ({
                                         mail: my_email,
                                         name: my_name,
                                         phone: my_phone
+
                                 })
                            })
                            // console.log(m);
