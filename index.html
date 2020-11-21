@@ -8,13 +8,34 @@
        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
-        <div  id="root" class="">
+        <div v-if="contacts.length == 10" id="root" class="container">
             <!-- inserisco condizione per far comparire {{email}} solo quando inserisco un valore(quindi solo dopo che ho ricevuto una risposta) -->
-            <!-- <div v-for="conctact in conctacts" class="contact"> -->
-                <!-- <h1>{{mails.response}</h1> -->
-                <!-- <h1> {{conctact.mail}}</h1> -->
+            <div class="contacts_box">
+                <!-- ....................alls contacts................... -->
 
+                    <ul class="contacts">
+                        <li
+                            v-for="(contact, i) in contacts"
+                            class="contact_row"
+                        >
+                            <div class="button_box">
+                                <button @click="isTrue_mail(i)" type="button" name="button">Mostra email</button>
+                                <button @click="isTrue_phone(i)" type="button" name="button">Mostra telefono</button>
+                            </div>
 
+                            <div class="name_box">
+                                {{contact.name.response}}
+                            </div>
+                            <div v-if="contact.mail.success" class="mail_box">
+                                {{contact.mail.response}}
+                            </div>
+                            <div v-if="contact.phone.success" class="phone_box">
+                                {{contact.phone.response}}
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </div>
         <script src="main.js" charset="utf-8"></script>

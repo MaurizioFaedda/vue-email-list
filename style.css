@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1200px;
+    height: 100vh;
+    margin: 50px auto;
+}
+
+.contact_row{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.name_box{
+    width: 25%;
+    /* padding-right: 50px; */
+}
+
+.mail_box, .phone_box{
+    display: flex;
+    justify-content: flex-start;
+    width: 27.5%;
+}
+
+.button_box{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
