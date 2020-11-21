@@ -19,22 +19,34 @@
             <!-- inserisco condizione per far comparire {{email}} solo quando inserisco un valore(quindi solo dopo che ho ricevuto una risposta) -->
             <div class="contacts_box">
                 <!-- ....................alls contacts................... -->
-                <div v-for='(contact, i) in contacts' class="contact_content">
-                    <div class="full-name">
-                        <h2>{{contact.name.response}}</h2>
-                    </div>
-                    <div class="contact_avatar_box">
-                        <img :src="'img/avatar_'+i+'.png'" alt="">
-
-                    </div>
-                    <div class="address">
-                        <div class="mail">
-                            <span><i class="fas fa-at"></i></span>
+                <div @click="isTrue_mail(i)" :class="{ flipped : !contact.mail.success}" class="contact_content" v-for='(contact, i) in contacts'>
+                    <div class="card front">
+                        <div class="full-name">
+                            <h2>{{contact.name.response}}</h2>
                         </div>
-                        <div class="phone">
-                            <span><i class="fas fa-phone-alt"></i></span>
-                        </div>
+                        <div class="contact_avatar_box">
+                            <img :src="'img/avatar_'+i+'.png'" alt="">
 
+                        </div>
+                        <div class="address">
+                            <span>Scopri di più:</span>
+                            <div class="mail">
+                                <span><i class="fas fa-at"></i></span>
+                            </div>
+                            <div class="phone">
+                                <span><i class="fas fa-phone-alt"></i></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card back">
+                        <h3>test</h3>
+                        <div class="mail_box">
+                            {{contact.mail.response}}
+                        </div>
+                        <div v-if="contact.phone.success" class="phone_box">
+                            {{contact.phone.response}}
+                        </div>
                     </div>
                 </div>
                     <!-- <ul class="contacts">

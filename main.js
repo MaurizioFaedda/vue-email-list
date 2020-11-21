@@ -3,6 +3,7 @@ var app = new Vue ({
 
     data: {
         contacts: [],
+
     },
 
     methods: {
@@ -33,6 +34,8 @@ var app = new Vue ({
             this.contacts[i].phone.success = false
             }
         }
+
+
     },
 
     mounted() {
