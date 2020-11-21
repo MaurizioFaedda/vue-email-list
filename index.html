@@ -28,7 +28,7 @@
                             <img :src="'img/avatar_'+i+'.png'" alt="">
 
                         </div>
-                        <div class="address">
+                        <div class="info">
                             <span>Scopri di più:</span>
                             <div class="mail">
                                 <span><i class="fas fa-at"></i></span>
@@ -40,13 +40,36 @@
                         </div>
                     </div>
                     <div class="card back">
-                        <h3>test</h3>
-                        <div class="mail_box">
-                            {{contact.mail.response}}
+                        <div class="back-container">
+                            <div class="contact_mini_avatar">
+                                <img :src="'img/avatar_'+i+'.png'" alt="">
+
+                            </div>
+                            <div class="info_contact">
+                                <p>
+                                    <span>
+                                        {{contact.name.response}}
+                                    </span> si occupa di lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+
+
                         </div>
-                        <div v-if="contact.phone.success" class="phone_box">
-                            {{contact.phone.response}}
+                        <div class="address">
+                            <div  class="info-phone">
+                                <span><i class="fas fa-phone-alt"></i></span>
+                                <span> {{contact.phone.response}}</span>
+                            </div>
+
+                            <div class="info-mail">
+                                <span><i class="fas fa-at"></i></span>
+                                <span>{{contact.mail.response}}</span>
+                            </div>
+
+
+
                         </div>
+
                     </div>
                 </div>
                     <!-- <ul class="contacts">

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-h2, i, span{
+h2, i, span, p{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
@@ -74,25 +74,35 @@ h2{
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 16;
+    border-radius: 12px;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 
 .card.back {
     width: 100%;
     height: 100%;
+    padding: 8px;
     background-color: #65cbff;
+    border-radius: 12px;
     transform: rotateY(180deg);
 }
 
-
-
-
+.info_contact span {
+    color: #12365c;
+    font-weight: bold;
+}
 
 .full-name {
     height: 30px;
     border-bottom: 1px solid #fff;
+}
 
+.back-container{
+    height: 210px;
+    margin: 8px;
+    padding: 8px;
+    border: 3px solid #fff;
+    border-radius: 8px;
 }
 
 .contact_avatar_box{
@@ -101,11 +111,17 @@ h2{
     margin: 0 auto;
 }
 
+.contact_mini_avatar{
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+
 img{
     width: 100%;
 }
 
-.address{
+.info{
     width: 60%;
     height: 30px;
     margin: 0 auto;
@@ -113,5 +129,14 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    text-align: left;
+}
 
+.address {
+    width: 100%;
+    height: auto;
+    padding: 0 16px;
+    margin-top: 10px;
+    font-size: 12px;
+    /* border: 1px solid black; */
 }
